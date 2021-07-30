@@ -1,0 +1,22 @@
+---
+version: 0.0
+os: linux
+files:
+  - source: /Code
+    destination: /var/log
+hooks:
+  BeforeInstall:
+    - location: Code/TEST.sh
+      timeout: 300
+      runas: root
+    - location: Code/TEST.sh
+      timeout: 300
+      runas: root
+  AfterInstall:
+    - location: Code/SOFTWAREINSTALL.sh
+      timeout: 300
+      runas: root
+  ApplicationStart:
+    - location: Code/SOFTWAREINSTALL.sh
+      timeout: 300
+      runas: root
